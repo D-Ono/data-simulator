@@ -1,0 +1,23 @@
+type TemperatureSensor {
+  title: String!
+  longitude: Int!
+  latitude: Int!
+  temperature: Float!
+  humidity: Float!
+}
+
+input TemperatureSensorInput {
+  title: String!
+  longitude: Int!
+  latitude: Int!
+  temperature: Float!
+  humidity: Float!
+}
+
+type Mutation {
+  createTemperature(data: TemperatureSensorInput!): TemperatureSensor!
+}
+
+type Subscription {
+  temperatureValues(data: String!): TemperatureSensor!
+}
